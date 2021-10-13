@@ -15,12 +15,22 @@
 
 
         // Your JavaScript goes here!
-        console.log(Math.floor(Math.random() * 3))
-        for (let i=1;i=30;i++){
+        
 
         
-        console.log(play())}
+        playerplay();
 
+        function playerplay(){
+            
+            let P_Play =   prompt("Please enter your move");
+            console.log(P_Play);
+            P_Play=P_Play.toLowerCase;
+            console.log(P_Play)
+            if (P_Play==="rock"||P_Play==="paper" || P_Play==="scissors"){
+                console.log("Well")
+            }
+
+        }
         function computerplay() {
             let c_play = Math.floor(Math.random() * 3);
             
