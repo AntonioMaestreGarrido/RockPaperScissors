@@ -17,7 +17,7 @@ function addSelect(e){
     console.log("SELECCTEEE "+i+e.target )
     e.target.classList.add('select'); 
     console.log("nombre "+e.target.alt )
-    Who_Win(e.target.alt)
+    Event(Who_Win(e.target.alt))
 }
 function Who_Win(P_Play) {
     
@@ -44,6 +44,7 @@ function Who_Win(P_Play) {
         else { who = "player" }
 
     }
+
     return who
 
 }
