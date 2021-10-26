@@ -3,56 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS</title>
     <link rel="stylesheet" href="./style.css">
+    <script defer src="./myscript.js"></script>
+    
+    
 
 </head>
 
 <body>
-    <script>
+    <header>
+        <h1>Rock! Paper! Scissors!</h1>
+    </header>
+    <div id="medio">
+        <div id="izq">
+            <div >
+                <img src="images/piedra.png" alt="piedra">
+            </div>
+            <div >
+                <img src="images/papel.png" alt="papel">
+            </div>
+            <div>
+                <img src="images/tijeras.png" alt="tijeras">
+            </div>
+        </div>
+        <div class="der">
+            <div>
+                <img src="images/piedra2.png" alt="piedra">
+            </div>
+            <div>
+                <img src="images/papel2.png" alt="papel">
+            </div>
+            <div>
+                <img src="images/tijeras2.png" alt="tijeras">
+            </div>
 
+        </div>
+    </div>
+    <div abajo></div>
 
-        // Your JavaScript goes here!
-        
-
-        
-        playerplay();
-
-        function playerplay(){
-            
-            let P_Play =   prompt("Please enter your move");
-            console.log(P_Play);
-            P_Play=P_Play.toLowerCase;
-            console.log(P_Play)
-            if (P_Play==="rock"||P_Play==="paper" || P_Play==="scissors"){
-                console.log("Well")
-            }
-
-        }
-        function computerplay() {
-            let c_play = Math.floor(Math.random() * 3);
-            
-
-            return   c_play;
-        }
-        function helloWorld() {
-            console.log("Hello World!")
-        }
-        function play() {
-            let n =computerplay()
-            
-            if (n === 0) {
-                 return "Rock" }
-            else if (n === 1) {
-                return "paper"}
-            else if (n === 2)  {
-                    return "scissors"}
-
-
-                }
-    </script>
 </body>
 
 

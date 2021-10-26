@@ -1,0 +1,26 @@
+body{
+    background-color: cadetblue;
+}
+h1{
+    font-size: 72px;
+    text-align: center;
+}
+img{
+    width: 120px;
+    height: 120px;
+    margin: 12px;
+}
+#medio{
+    background-color: brown;
+    display: flex;
+    justify-content: space-around;
+    justify-self: center;
+    margin: auto;
+    width: 800px;
+    
+    gap: 1px;
+    
+}
+.select{
+    border: solid 6px yellow;
+}
