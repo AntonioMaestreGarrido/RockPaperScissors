@@ -1,12 +1,14 @@
 
 // Your JavaScript goes here!
+let pWins = 0
+let cWins = 0
 
 let i = 0
 var sele = document.querySelectorAll("#izq div");
 console.log(sele)
 
 sele.forEach(e => e.addEventListener("click", addSelect))
-
+document.querySelector("#vs").addEventListener("click", deselect)
 
 
 
@@ -19,12 +21,21 @@ function addSelect(e) {
     console.log("nombre " + e.target.alt)
     Who_Win(e.target.alt)
     
-   
+
+
     //document.querySelectorAll("img").forEach(e=>e.classList.remove("select"))
 
 }
-function deselect(){
-    document.querySelectorAll("img").forEach(e=>e.classList.remove("select"))
+function deselect() {
+    document.querySelectorAll("img").forEach(e => e.classList.remove("select"))
+    
+    document.querySelector("#abajo p").textContent = `Player ${pWins}:${cWins} Computer`;
+    checkWin()
+}
+function checkWin(){
+    if(cWins===5){document.querySelector("#vs").textContent = "You lost the game";}
+    else if(pWins===5){document.querySelector("#vs").textContent = "You win the game";}
+    else{document.querySelector("#vs").textContent = "Vs";}
 }
 function Who_Win(P_Play) {
 
@@ -38,20 +49,22 @@ function Who_Win(P_Play) {
 
     else if (P_Play === "piedra") {
         if (c_play === "papel") { who = "You Lose" }
-        else { who = "Win!" }
+        else { who = "You Win!" }
 
     }
     else if (P_Play === "papel") {
-        if (c_play === "tijeras") { who = "Lose" }
-        else { who = "Win!" }
+        if (c_play === "tijeras") { who = "You Lose" }
+        else { who = "You Win!" }
 
     }
     else if (P_Play === "tijeras") {
-        if (c_play === "piedra") { who = "Lose" }
-        else { who = "Win!" }
+        if (c_play === "piedra") { who = "You Lose" }
+        else { who = "You Win!" }
 
     }
-    document.querySelector("#vs").textContent=who;
+    if (who != "Draw" && who === "You Win!") { pWins++ }
+    else if (who != "Draw" && who === "You Lose") { cWins++ }
+    document.querySelector("#vs").textContent = who;
     return who
 
 }
@@ -78,7 +91,7 @@ function play() {
         cp = "tijeras"
     }*/
     const opciones = ['piedra', 'papel', 'tijeras']
-    let cp = opciones[Math.floor(Math.random()*opciones.length)]
+    let cp = opciones[Math.floor(Math.random() * opciones.length)]
     document.querySelector("img[alt='" + cp + "2'] ").classList.add("select")
     return cp;
 
