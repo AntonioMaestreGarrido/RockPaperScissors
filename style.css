@@ -1,5 +1,5 @@
 body{
-    background-color: cadetblue;
+    background-color: rgb(6, 9, 214);
 }
 h1{
     font-size: 72px;
@@ -12,13 +12,13 @@ img{
     border: solid 5px white;
 }
 #medio{
-    background-color: brown;
+    background-color:rgb(111, 113, 219) ;
     display: flex;
     justify-content: space-around;
     justify-self: center;
     margin: auto;
     width: 800px;
-    
+    border:  solid 3px black;
     gap: 1px;
     
 }
@@ -30,7 +30,7 @@ img{
 #vs{
     font-size: 100px;
     width: 300px;
-    background-color: violet;
+    border:  solid 3px black;
     font-weight: bolder;
     align-self: center;
     justify-self: center;
@@ -39,5 +39,6 @@ img{
 }
 #abajo{font-size: 50px;
     text-align: center;
-
+    
+    
 }

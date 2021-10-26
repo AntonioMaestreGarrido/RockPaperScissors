@@ -14,13 +14,13 @@ document.querySelector("#vs").addEventListener("click", deselect)
 
 
 function addSelect(e) {
-
+    sele.forEach(e => e.removeEventListener("click", addSelect))
     i = i + 1
     console.log("SELECCTEEE " + i + e.target)
     e.target.classList.add('select');
     console.log("nombre " + e.target.alt)
     Who_Win(e.target.alt)
-    
+
 
 
     //document.querySelectorAll("img").forEach(e=>e.classList.remove("select"))
@@ -28,14 +28,21 @@ function addSelect(e) {
 }
 function deselect() {
     document.querySelectorAll("img").forEach(e => e.classList.remove("select"))
-    
+    sele.forEach(e => e.addEventListener("click", addSelect))
     document.querySelector("#abajo p").textContent = `Player ${pWins}:${cWins} Computer`;
+    document.querySelector("#vs").addEventListener("click", deselect)
     checkWin()
 }
-function checkWin(){
-    if(cWins===5){document.querySelector("#vs").textContent = "You lost the game";}
-    else if(pWins===5){document.querySelector("#vs").textContent = "You win the game";}
-    else{document.querySelector("#vs").textContent = "Vs";}
+function checkWin() {
+    if (cWins === 5) { document.querySelector("#vs").textContent = "You lost the game"; }
+    else if (pWins === 5) { document.querySelector("#vs").textContent = "You win the game"; }
+    else { document.querySelector("#vs").textContent = "Vs"; return }
+
+
+    document.querySelector("#vs").addEventListener("click", _ => { location.reload(); })
+    
+    sele.forEach(e => e.removeEventListener("click", addSelect))
+
 }
 function Who_Win(P_Play) {
 
