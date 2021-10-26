@@ -24,3 +24,11 @@ img{
 .select{
     border: solid 6px yellow;
 }
+#vs{
+    font-size: 100px;
+    font-weight: bolder;
+    align-self: center;
+    justify-self: center;
+    
+    text-align: center;
+}

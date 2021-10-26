@@ -1,68 +1,57 @@
 
 // Your JavaScript goes here!
 
-let i=0
+let i = 0
 var sele = document.querySelectorAll("#izq div");
 console.log(sele)
 
-sele.forEach(e=>e.addEventListener("click",addSelect))
+sele.forEach(e => e.addEventListener("click", addSelect))
 
 
 
 
 
-function addSelect(e){
-    
-    i=i+1
-    console.log("SELECCTEEE "+i+e.target )
-    e.target.classList.add('select'); 
-    console.log("nombre "+e.target.alt )
-    Event(Who_Win(e.target.alt))
+function addSelect(e) {
+
+    i = i + 1
+    console.log("SELECCTEEE " + i + e.target)
+    e.target.classList.add('select');
+    console.log("nombre " + e.target.alt)
+    Who_Win(e.target.alt)
+    alert("a")
+    document.querySelectorAll("img").forEach(e=>e.classList.remove("select"))
+
 }
 function Who_Win(P_Play) {
-    
+
     let c_play = play();
-    alert(c_play)
+
     let who;
     if (P_Play === c_play) {
         who = "Draw"
-        return who
-    }
-
-    if (P_Play === "piedra") {
-        if (c_play === "papel") { who = "computer" }
-        else { who = "player" }
-
-    }
-    if (P_Play === "papel") {
-        if (c_play === "tijeras") { who = "computer" }
-        else { who = "player" }
-
-    }
-    if (P_Play === "tijeras") {
-        if (c_play === "piedra") { who = "computer" }
-        else { who = "player" }
 
     }
 
+    else if (P_Play === "piedra") {
+        if (c_play === "papel") { who = "You Lose" }
+        else { who = "Win!" }
+
+    }
+    else if (P_Play === "papel") {
+        if (c_play === "tijeras") { who = "Lose" }
+        else { who = "Win!" }
+
+    }
+    else if (P_Play === "tijeras") {
+        if (c_play === "piedra") { who = "Lose" }
+        else { who = "Win!" }
+
+    }
+    document.querySelector("#vs").textContent=who;
     return who
 
 }
-function playerplay() {
-    let P_Play;
-    do {
-        P_Play = prompt("Please enter your move");
-        console.log(P_Play);
-        P_Play = P_Play.toLowerCase();
-        console.log(P_Play)
-        if (P_Play === "piedra" || P_Play === "papel" || P_Play === "tijeras") {
-            console.log("Well")
-            return P_Play
-        } else {
-            P_Play = "error"
-        }
-    } while (P_Play === "error")
-}
+
 function computerplay() {
     let c_play = Math.floor(Math.random() * 3);
 
@@ -74,16 +63,17 @@ function helloWorld() {
 }
 function play() {
     let n = computerplay()
-
+    var cp = ""
     if (n === 0) {
-        return "piedra"
+        cp = "piedra"
     }
     else if (n === 1) {
-        return "papel"
+        cp = "papel"
     }
     else if (n === 2) {
-        return "tijeras"
+        cp = "tijeras"
     }
-
+    document.querySelector("img[alt='" + cp + "2'] ").classList.add("select")
+    return cp;
 
 }
