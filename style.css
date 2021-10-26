@@ -22,7 +22,9 @@ img{
     
 }
 .select{
-    border: solid 6px yellow;
+    border: solid 5px yellow;
+    width: 110px;
+    height: 110px;
 }
 #vs{
     font-size: 100px;

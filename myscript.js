@@ -18,9 +18,13 @@ function addSelect(e) {
     e.target.classList.add('select');
     console.log("nombre " + e.target.alt)
     Who_Win(e.target.alt)
-    alert("a")
-    document.querySelectorAll("img").forEach(e=>e.classList.remove("select"))
+    
+   
+    //document.querySelectorAll("img").forEach(e=>e.classList.remove("select"))
 
+}
+function deselect(){
+    document.querySelectorAll("img").forEach(e=>e.classList.remove("select"))
 }
 function Who_Win(P_Play) {
 
@@ -62,7 +66,7 @@ function helloWorld() {
     console.log("Hello World!")
 }
 function play() {
-    let n = computerplay()
+    /*let n = computerplay()
     var cp = ""
     if (n === 0) {
         cp = "piedra"
@@ -72,7 +76,9 @@ function play() {
     }
     else if (n === 2) {
         cp = "tijeras"
-    }
+    }*/
+    const opciones = ['piedra', 'papel', 'tijeras']
+    let cp = opciones[Math.floor(Math.random()*opciones.length)]
     document.querySelector("img[alt='" + cp + "2'] ").classList.add("select")
     return cp;
 
